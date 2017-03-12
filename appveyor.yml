@@ -1,0 +1,20 @@
+version: 1.0.{build}  
+image: Visual Studio 2017
+
+environment:  
+  DOCKER_USER:
+    secure: qCgkVnQqSXOs/kKT49/AlQ==
+  DOCKER_PASS:
+    secure: DL+5PhLD2T+ItxO1nYm+5w==
+install:  
+  - docker version
+
+build_script:  
+  - docker build -t mcas/franceconnect-demo-windows .
+
+test_script:  
+  - docker run mcas/franceconnect-demo-windows
+
+deploy_script:  
+  - docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
+  - docker push mcas/franceconnect-demo-windows
