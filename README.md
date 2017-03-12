@@ -4,7 +4,7 @@ Exemple de fournisseur de services avec FranceConnect
 Avec Docker, lancez par exemple la commande suivante dans une instance Windows Server 2016 / Nano Server avec le moteur Docker installé :
 
 ```
-docker run -d -p 80:3001 --name franceconnect-demo mcas/franceconnect-demo-windows:latest
+docker run -d -p 80:3001 --name franceconnect-demo --network=nat mcas/franceconnect-demo-windows:latest
 ```
 
 Exemples de fournisseurs de services pour France-connect :
