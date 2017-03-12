@@ -13,7 +13,7 @@ build_script:
   - docker build -t mcas/franceconnect-demo-windows .
 
 test_script:  
-  - docker run mcas/franceconnect-demo-windows
+  - docker run -itd -p 3001:3001 --network=nat mcas/franceconnect-demo-windows
 
 deploy_script:  
   - docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
