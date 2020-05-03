@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./bin/www"
+    "start": "./bin/www",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "body-parser": "~1.8.1",
@@ -22,11 +24,13 @@
     "passport-openidconnect": "0.0.1",
     "remove": "~0.1.5",
     "request": "~2.45.0",
-    "serve-favicon": "~2.1.5"
+    "serve-favicon": "~2.1.5",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "chai": "^1.10.0",
     "mocha": "^2.1.0",
     "sinon": "^1.12.2"
-  }
+  },
+  "snyk": true
 }
