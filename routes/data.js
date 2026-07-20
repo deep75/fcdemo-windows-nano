@@ -9,6 +9,7 @@ var passportAuthenticateWithCUstomClaims = require('../helpers/passportAuthentic
 var _ = require('lodash');
 
 var parameters = {
+    issuer: config.openIdConnectStrategyParameters.issuer || config.fcURL,
     authorizationURL: config.oauth.authorizationURL,
     tokenURL: config.oauth.tokenURL,
     clientID: config.openIdConnectStrategyParameters.clientID,

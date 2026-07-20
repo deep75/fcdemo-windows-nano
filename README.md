@@ -1,6 +1,33 @@
 Exemple de fournisseur de services avec FranceConnect
 ==========================
 
+## Variables d'environnement obligatoires
+
+Les secrets ne sont plus versionnés dans le dépôt. Avant de lancer l'application, définir :
+
+- `SESSION_SECRET`
+- `FC_CLIENT_ID`
+- `FC_CLIENT_SECRET`
+
+Variables optionnelles de configuration (URLs/callback) :
+
+- `FC_URL`
+- `FC_CALLBACK_URL`
+- `FC_AUTHORIZATION_URL`
+- `FC_TOKEN_URL`
+- `FC_USERINFO_URL`
+- `FC_LOGOUT_URL`
+- `FC_ISSUER`
+- `FC_ACR_VALUES`
+- `OAUTH_AUTHORIZATION_URL`
+- `OAUTH_TOKEN_URL`
+- `OAUTH_CALLBACK_URL`
+- `QUOTIENT_FAMILIAL_URL`
+
+## Note dépendance
+
+`request` est conservé pour compatibilité avec le code historique, mais la librairie est dépréciée en amont.
+
 Avec Docker, lancez par exemple la commande suivante dans une instance Windows Server 2016 / Windows 10 / Windows Nano Server avec le moteur Docker for Windows Containers préinstallé :
 
 ```
