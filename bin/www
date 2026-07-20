@@ -1,1 +1,6 @@
-PORT=3001 node app
+#!/usr/bin/env node
+
+'use strict';
+
+process.env.PORT = process.env.PORT || '3001';
+require('../app');

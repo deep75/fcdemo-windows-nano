@@ -1,3 +1,11 @@
-FROM stefanscherer/node-windows:8-nano-onbuild  
+FROM node:20-nanoserver-ltsc2022
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install --omit=dev --no-audit --no-fund
+
+COPY . .
+
 EXPOSE 3001
-CMD [ "node", "app.js" ]
+CMD ["npm", "start"]

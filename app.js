@@ -34,7 +34,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({ secret: 'Some Secret !!!', key: 'sid'}));
+app.use(session({
+    secret: config.session.secret,
+    key: 'sid',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        sameSite: 'lax',
+        secure: app.get('env') === 'production'
+    }
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
